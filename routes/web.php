@@ -21,10 +21,16 @@ Route::get('/', function () {
 
 // createblog
 Route::get('/post/createblog', [BlogController::class, 'createblog'])->name('post.createblog');
-Route::get('/post/storeblog', [BlogController::class, 'storeblog'])->name('post.storeblog');
+Route::post('/post/storeblog', [BlogController::class, 'storeblog'])->name('post.storeblog');
 
 
 // createcategory
 Route::get('/post/createcategory', [CategoryController::class, 'createcategory'])->name('post.createcategory');
 Route::post('/post/storecategory', [CategoryController::class, 'storecategory'])->name('post.storecategory');
 
+// Route to display all data
+Route::get('/post/Blogs', [BlogController::class,'index'])->name('post.allblogs');
+// Route to display details data
+Route::get('/post/{Blog}', [BlogController::class,'show'])
+->where('id','\d+')  //only int on id
+->name('post.show');
