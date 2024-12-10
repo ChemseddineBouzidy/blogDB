@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="{{ asset('/css/mediumish.css') }}" rel="stylesheet">
+
 </head>
 <body>
 
@@ -89,8 +90,8 @@
 				</div>
 				<div class="col-md-7">
 					<div class="card-block">
-						<h2 class="card-title"><a href="{{route('post.show',$Blogs->id)}}">{!! Str::limit($Blogs->title,30,'....etc')!!}</a></h2>
-						<h4 class="card-text">{!! Str::limit($Blogs->description,70,'....etc')!!}.</h4>
+						<h2 class="card-title"><a href="{{route('post.show',$Blogs->id)}}">{{ Str::limit($Blogs->title,30,'....etc')}}</a></h2>
+						<h4 class="card-text">{{ Str::limit($Blogs->description,70,'....etc')}}.</h4>
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
@@ -134,7 +135,7 @@
 				<img class="img-fluid" src="{{ asset('storage/'.$Blogs->image) }}" alt="">
 			</a>
 			<div class="card-block">
-				<h2 class="card-title"><a href="post.html">{!! Str::limit($Blogs->title,30,'....etc')!!}</a></h2>
+				<h2 class="card-title"><a href="post.html">{{Str::limit($Blogs->title,30,'....etc')}}</a></h2>
 				<h4 class="card-text">{!! Str::limit($Blogs->description,70,'....etc')!!}.</h4>
 				<div class="metafooter">
 					<div class="wrapfooter">
@@ -150,7 +151,9 @@
 				</div>
 			</div>
 		</div>
+		{{$Blog->links()}}
         @endforeach
+		
 		<!-- end post -->
 
 		
