@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Test;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,9 @@ Route::get('/post/Blogs', [BlogController::class,'index'])->name('post.allblogs'
 Route::get('/post/{Blog}', [BlogController::class,'show'])
 ->where('id','\d+')  //only int on id
 ->name('post.show');
+
+
+// Test
+
 
 

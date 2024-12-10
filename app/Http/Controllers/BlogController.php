@@ -39,5 +39,5 @@ class BlogController extends Controller
 
         return view('post.show', compact('Blog'));
     }
- 
+
 }
