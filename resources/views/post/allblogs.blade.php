@@ -14,6 +14,8 @@
 <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 <!-- Custom styles for this template -->
 <link href="{{ asset('/css/mediumish.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/hero.css') }}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -129,20 +131,26 @@
 
 	<!-- Begin List Posts
 	================================================== -->
+
+	
+
 	<section class="recent-posts">
 	<div class="section-title">
 		<h2><span>All Stories</span></h2>
 	</div>
 	<div class="card-columns listrecent">
+		
         @foreach ($Blog as $Blogs)
+	
 		<!-- begin post -->
 		<div class="card">
+		
 			<a href="{{route('post.show',$Blogs->id)}}">
 				<img class="img-fluid" src="{{ asset('storage/'.$Blogs->image) }}" alt="">
 			</a>
 			<div class="card-block">
 				<h2 class="card-title"><a href="post.html">{{Str::limit($Blogs->title,30,'....etc')}}</a></h2>
-				<h4 class="card-text">{{ Str::limit($Blogs->description,20,'....etc')}}.</h4>
+				<h4 class="card-text">{{ Str::limit($Blogs->description,20,'....etc')}}.	{{$Blogs->categoryname}}</h4>
 				<div class="metafooter">
 					<div class="wrapfooter">
 						<span class="meta-footer-thumb">
@@ -158,15 +166,18 @@
 			</div>
 		</div>
 		{{$Blog->links()}}
+
         @endforeach
-		
+	
 		<!-- end post -->
+		
 
 		
 	
 
 	</div>
 	</section>
+
 	<!-- End List Posts
 	================================================== -->
 
@@ -191,9 +202,36 @@
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ asset('/js/main.js') }}"></script>
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>{{ asset('/js/bootstrap.min.js') }}
 <script src="{{ asset('/js/ie10-viewport-bug-workaround.js') }}"></script>
 </body>
 </html>
+<div class="post-filter container">
+	<span class="filter-item active-filter" data-filter="all">All</span>
+	<span class="filter-item" data-filter="sport">sport</span>
+	<span class="filter-item" data-filter="food">Food</span>
+	<span class="filter-item" data-filter="news">News</span>
+ 
+</div>
+
+<div class="post container">
+	<!-- Post 1 -->
+	@foreach ($Blog as $Blogs)
+	<div class="post-box {{$Blogs->categoryname}}">
+		<img src="" alt="" class="post-img">
+		<h2 class="category"><div class="tes"></div></h2>
+		<a href="#" class="post-title"> </a>
+		<span class="post-date"></span>
+		<p class="post-description"> </p>
+		<div class="profile">
+			<img src="" alt="" class="profile-img">
+			<span class="profile-name"></span>
+		</div>
+	</div>
+	@endforeach
+</div>

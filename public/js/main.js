@@ -10,25 +10,6 @@ $(document).ready(function () {
     $(".filter-item").click(function () {
         const value = $(this).attr("data-filter");
         if (value == "all"){
-            $(".post-box-post").show("1000")
-        } else{
-            $(".post-box-post")
-                .not("." + value)
-                .hide(1000);
-            $(".post-box-post")
-            .filter("." + value)
-            .show("1000")
-        }
-    });
-    $(".filter-item").click(function () {
-        $(this).addClass("active-filter").siblings().removeClass("active-filter")
-    });
-});
-//Filter 2
-$(document).ready(function () {
-    $(".filter-item").click(function () {
-        const value = $(this).attr("data-filter");
-        if (value == "all"){
             $(".post-box").show("1000")
         } else{
             $(".post-box")
