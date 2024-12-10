@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
@@ -17,13 +18,19 @@ use PHPUnit\Framework\Test;
 */
 
 Route::get('/', function () {
-    return view('test');
+    return view('post.allblogs');
 });
 
 // createblog
 Route::get('/post/createblog', [BlogController::class, 'createblog'])->name('post.createblog');
 Route::post('/post/storeblog', [BlogController::class, 'storeblog'])->name('post.storeblog');
 
+// Show login form
+Route::get('/login', [AuthController::class, 'show'])->name('login');
+// Handle login
+Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
+// Logout
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // createcategory
 Route::get('/post/createcategory', [CategoryController::class, 'createcategory'])->name('post.createcategory');
@@ -31,7 +38,7 @@ Route::post('/post/storecategory', [CategoryController::class, 'storecategory'])
 
 // Route to display all data
 Route::get('/post/Blogs', [BlogController::class,'index'])->name('post.allblogs');
-
+Route::get('/', [BlogController::class,'index'])->name('post.allblogs');
 
 // Route to display details data
 Route::get('/post/{Blog}', [BlogController::class,'show'])
@@ -40,8 +47,8 @@ Route::get('/post/{Blog}', [BlogController::class,'show'])
 
 
 // Test
-Route::get('/', function () {
-    return view('test');
-});
+Route::get('/admin', function () {
+    return view('dashbord');
+})->name('dashbord');;
 
 
