@@ -127,7 +127,7 @@
 		<h2><span>All Stories</span></h2>
 	</div>
 	<div class="card-columns listrecent">
-        @foreach ($Blog->slice(6, )  as $Blogs)
+        @foreach ($Blog as $Blogs)
 		<!-- begin post -->
 		<div class="card">
 			<a href="{{route('post.show',$Blogs->id)}}">

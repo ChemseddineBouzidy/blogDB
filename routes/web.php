@@ -17,7 +17,7 @@ use PHPUnit\Framework\Test;
 */
 
 Route::get('/', function () {
-    return view('dashbord');
+    return view('test');
 });
 
 // createblog
@@ -40,6 +40,8 @@ Route::get('/post/{Blog}', [BlogController::class,'show'])
 
 
 // Test
-
+Route::get('/', function () {
+    return view('test');
+});
 
 

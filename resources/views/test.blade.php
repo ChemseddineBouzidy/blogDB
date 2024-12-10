@@ -11,9 +11,6 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     {{-- link css --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        {{-- link custome css --}}
 {{-- editorblo --}}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -22,42 +19,42 @@
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset('/js/jquery.richtext.js') }}"></script>
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                clifford: '#da373d',
-              }
-            }
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
           }
         }
-      </script>
-        <style type="text/tailwindcss">
-            @layer utilities {
-              .content-auto {
-                content-visibility: auto;
-              }
-            }
-          </style>
-    <title>Welcome to {{$title}}</title>
+      }
+    }
+  </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+    <title>Welcome to</title>
     {{-- <title> @yield('title','...')</title> --}}
 </head>
 <body>
-    @include('partials.nav')
-    <main>
-     
-        <div class="container mx-auto px-28 pt-24">
-            <!-- ... -->   {{$slot}}
-          </div>
-    </main>
-    @include('partials.footer')
+    <div class="container mx-auto px-28 pt-24">
+        <!-- ... -->      <div class="page-wrapper box-content">
+
+        <textarea class="content" name="example">a</textarea>
+
+    </div>
+      </div>
+
     <script>
       $(document).ready(function() {
           $('.content').richText();
       });
       </script>
 
-    <script src="{{ asset('/js/main.js') }}"></script>
+<script src="{{ asset('/js/main.js') }}"></script>
 </body>
 </html>
