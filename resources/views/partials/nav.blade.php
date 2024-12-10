@@ -11,7 +11,7 @@
             </svg>
          </button>
         <a href="{{route('post.allblogs')  }}" class="flex ms-2 md:me-24">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" />
+          <img src="https://www.shareicon.net/data/512x512/2015/11/28/679100_logo_512x512.png" class="h-8 me-3" alt="FlowBite Logo" />
           <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Click her to see your Blog</span>
         </a>
       </div>
