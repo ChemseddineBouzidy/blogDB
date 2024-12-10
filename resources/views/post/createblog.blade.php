@@ -1,5 +1,5 @@
 
-<x-master title="Home Page">
+<x-dashbord title="Home Page">
       <!-- Success message (optional) -->
       @if(session('success'))
       <div id="alert-additional-content-3" class="p-4 mb-4 text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
@@ -86,8 +86,8 @@
         </div>
      
       <div class="mb-5">
-        <label for="idCategory" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Category</label>
-        <input type="text" name="idCategory" value="{{old('idCategory')}}" id="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  placeholder="Toyota,Peugeot ....." required />
+        <label for="categoryname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Category</label>
+        <input type="text" name="categoryname" value="{{old('categoryname')}}" id="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  placeholder="Toyota,Peugeot ....." required />
       </div>
       <div class="mb-5">
         <label for="Modele" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
@@ -105,4 +105,4 @@
 </div>
 
 
-    </x-master>
+    </x-dashbord>

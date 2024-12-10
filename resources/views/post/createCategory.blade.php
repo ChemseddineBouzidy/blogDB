@@ -1,5 +1,5 @@
 
-<x-master title="Home Page">
+<x-dashbord title="Home Page">
       <!-- Success message (optional) -->
       @if(session('success'))
       <div id="alert-additional-content-3" class="p-4 mb-4 text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
@@ -77,4 +77,4 @@
 </div>
 
 
-    </x-master>
+    </x-dashbord>

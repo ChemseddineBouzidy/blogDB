@@ -31,11 +31,13 @@ class BlogController extends Controller
     
         $Blog = Blog::paginate(13);
      
-        return view('post.allblogs', compact('Blog'));
+        return view('post.allblogs',compact('Blog'));
+     
     }
     public function show(Blog $Blog)
     {
 
         return view('post.show', compact('Blog'));
     }
+ 
 }

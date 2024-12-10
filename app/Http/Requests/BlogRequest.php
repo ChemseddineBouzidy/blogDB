@@ -26,7 +26,7 @@ class BlogRequest extends FormRequest
         return [
             //
             'author' => 'required',
-            'idCategory' => 'required',
+            'categoryname' => 'required',
             'title' => 'required',
             'description' => 'required',   
             'image' => 'required|image',

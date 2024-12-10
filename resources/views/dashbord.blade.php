@@ -1,4 +1,4 @@
 
-<x-master title="Home Page">
+<x-dashbord title="Home Page">
     welcome
-      </x-master>
+      </x-dashbord>

@@ -30,7 +30,11 @@ Route::post('/post/storecategory', [CategoryController::class, 'storecategory'])
 
 // Route to display all data
 Route::get('/post/Blogs', [BlogController::class,'index'])->name('post.allblogs');
+
+
 // Route to display details data
 Route::get('/post/{Blog}', [BlogController::class,'show'])
 ->where('id','\d+')  //only int on id
 ->name('post.show');
+
+
