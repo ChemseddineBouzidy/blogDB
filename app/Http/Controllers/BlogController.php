@@ -42,5 +42,12 @@ class BlogController extends Controller
 
         return view('post.show', compact('Blog'));
     }
- 
+    public function news()
+    {
+   
+        $Blognews = Blog::paginate(9);
+     
+        return view('post.news',compact('Blognews'));
+     
+    }
 }

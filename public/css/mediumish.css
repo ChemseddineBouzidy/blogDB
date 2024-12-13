@@ -180,7 +180,9 @@ span.post-name a,span.post-read-more a:hover {
 }
 .mediumnavigation .navbar-brand {
 	font-weight:500;
+
 }
+
 .mediumnavigation .dropdown-menu {
 	border:1px solid rgba(0,0,0,0.08);
 	margin:.5rem 0 0;
@@ -195,7 +197,7 @@ span.post-name a,span.post-read-more a:hover {
 	cursor:pointer;
 }
 .mediumnavigation .navbar-brand img {
-	max-height:30px;
+	max-height:50px;
 	margin-right:5px;
 }
 .mainheading h1.sitetitle {

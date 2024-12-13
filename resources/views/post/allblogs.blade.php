@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<x-master title="Mon Profile ">
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -6,7 +7,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" href="{{ asset('/img/favicon.ico') }}">
-<title>Mediumish - A Medium style template by WowThemes.net</title>
+<title>blog</title>
 <!-- Bootstrap core CSS -->
 <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
 <!-- Fonts -->
@@ -18,45 +19,9 @@
 
 
 </head>
-<body>
+<body> --}}
 
-<!-- Begin Nav
-================================================== -->
-<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
-<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="container">
-	<!-- Begin Logo -->
-	<a class="navbar-brand" href="index.html">
-	<img src="assets/img/logo.png" alt="logo">
-	</a>
-	<!-- End Logo -->
-	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-		<!-- Begin Menu -->
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item active">
-			<a class="nav-link" href="{{route('post.allblogs')  }}">All <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="post.html">Sport</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="author.html">News</a>
-			</li>
-		</ul>
-		<!-- End Menu -->
-		<!-- Begin Search -->
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search">
-			<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
-		</form>
-		<!-- End Search -->
-	</div>
-</div>
-</nav>
-<!-- End Nav
-================================================== -->
+
 
 <!-- Begin Site Title
 ================================================== -->
@@ -84,7 +49,7 @@
 	</div>
 	<div class="card-columns listfeaturedtag">
       
-        @foreach ($Blog->slice(0, 6)  as $Blogs)
+        @foreach ($Blog->slice(0, 4)  as $Blogs)
  
 		<!-- begin post -->
 		<div class="card">
@@ -103,7 +68,7 @@
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
-								<a href="{{route('post.show',$Blogs->id)}}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+								<a href="{{route('post.show',$Blogs->id)}}"><img class="author-thumb" src="https://www.mediabistro.com/wp-content/uploads/2014/09/best-selling-author.jpg" alt="Sal"></a>
 								</span>
 								<span class="author-meta">
 								<span class="post-name"><a href="{{route('post.show',$Blogs->id)}}">{{$Blogs->author}}</a></span><br/>
@@ -157,11 +122,11 @@
 				<div class="metafooter">
 					<div class="wrapfooter">
 						<span class="meta-footer-thumb">
-						<a href="{{route('post.show',$Blogs->id)}}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+						<a href="{{route('post.show',$Blogs->id)}}"><img class="author-thumb" src="https://www.mediabistro.com/wp-content/uploads/2014/09/best-selling-author.jpg" alt="Sal"></a>
 						</span>
 						<span class="author-meta">
 						<span class="post-name"><a href="{{route('post.show',$Blogs->id)}}">{{$Blogs->author}}</a></span><br/>
-						<span class="post-date">{{!date('D-M-Y', strtotime($Blogs->created_at))}}</span><span class="dot"></span><span class="post-read"></span>
+						<span class="post-date">{{date('D-M-Y', strtotime($Blogs->created_at))}}</span><span class="dot"></span><span class="post-read"></span>
 						</span>
 					</div>
 				</div>
@@ -183,20 +148,7 @@
 	<!-- End List Posts
 	================================================== -->
 	{{$Blog->links()}}
-	<!-- Begin Footer
-	================================================== -->
-	<div class="footer">
-		<p class="pull-left">
-			 Copyright &copy; 2024 
-		</p>
-		<p class="pull-right">
-			 Contact Us : <a  href="tel:+2126167331419"  style="color: #37a7a7">0616733141</a>
-		</p>
-		<div class="clearfix">
-		</div>
-	</div>
-	<!-- End Footer
-	================================================== -->
+
 
 </div>
 <!-- /.container -->
@@ -204,7 +156,7 @@
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="{{ asset('/js/main.js') }}"></script>
+{{-- <script src="{{ asset('/js/main.js') }}"></script>
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -215,4 +167,5 @@
 
 
 </body>
-</html>
+</html> --}}
+</x-master> 

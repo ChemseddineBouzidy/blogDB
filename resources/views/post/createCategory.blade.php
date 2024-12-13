@@ -57,7 +57,7 @@
 
       <div class="mb-5">
           <label for="nameCategory" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name of Category</label>
-          <input type="text" name="nameCategory" id="text" value="{{old('nameCategory')}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  placeholder="Sport,News ....." required />
+          <input type="text" name="nameCategory" id="text" oninput="this.value = this.value.toUpperCase()" value="{{old('nameCategory')}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  placeholder="Sport,News ....." required />
           @error('matricule')
          
           <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
