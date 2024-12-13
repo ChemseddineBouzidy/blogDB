@@ -11,8 +11,8 @@
             </svg>
          </button>
         <a href="{{route('post.allblogs')}}" class="flex ms-2 md:me-24">
-          <img src="https://www.shareicon.net/data/512x512/2015/11/28/679100_logo_512x512.png" class="h-8 me-3" alt="FlowBite Logo" />
-          <span class="self-center text-l font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Acceder a votre site</span>
+          <img src="{{ asset('storage/Logo.png') }}" class="h-11 me-1" alt="FlowBite Logo" />
+          <span class="self-center text-l font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Acceder a votre site --></span>
         </a>
       </div>
       <div class="flex items-center">
