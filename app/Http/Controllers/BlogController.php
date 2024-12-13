@@ -32,7 +32,7 @@ class BlogController extends Controller
     public function index()
     {
         $Category = Category::paginate(9);
-        $Blog = Blog::paginate(9);
+        $Blog = Blog::paginate(10);
      
         return view('post.allblogs',compact('Blog','Category'));
      
@@ -45,7 +45,7 @@ class BlogController extends Controller
     public function news()
     {
    
-        $Blognews = Blog::paginate(9);
+        $Blognews = Blog::paginate(29);
      
         return view('post.news',compact('Blognews'));
      
@@ -53,10 +53,17 @@ class BlogController extends Controller
     public function sport()
     {
    
-        $Blognews = Blog::paginate(9);
+        $Blognews = Blog::paginate(29);
      
         return view('post.sport',compact('Blognews'));
      
     }
-    
+    public function web()
+    {
+   
+        $Blogweb = Blog::paginate(25);
+     
+        return view('post.web',compact('Blogweb'));
+     
+    }
 }

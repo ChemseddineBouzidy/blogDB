@@ -23,7 +23,7 @@
         <a class="nav-link" href="{{route('post.news')}}">News</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('post.news')}}">Web Dev</a>
+          <a class="nav-link" href="{{route('post.web')}}">Web Dev</a>
           </li>
       </ul>
       <!-- End Menu -->

@@ -18,6 +18,7 @@ Route::post('/storecategory', [CategoryController::class, 'storecategory'])->nam
 Route::get('/Blogs', [BlogController::class,'index'])->name('allblogs');
 Route::get('/Blog/news', [BlogController::class,'news'])->name('news');
 Route::get('/Blog/sport', [BlogController::class,'sport'])->name('sport');
+Route::get('/Blog/web', [BlogController::class,'web'])->name('web');
 });
 
 
