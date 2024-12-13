@@ -50,4 +50,13 @@ class BlogController extends Controller
         return view('post.news',compact('Blognews'));
      
     }
+    public function sport()
+    {
+   
+        $Blognews = Blog::paginate(9);
+     
+        return view('post.sport',compact('Blognews'));
+     
+    }
+    
 }

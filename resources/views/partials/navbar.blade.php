@@ -6,7 +6,7 @@
   </button>
   <div class="container">
     <!-- Begin Logo -->
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="{{route('post.allblogs')}}">
     <img src="{{ asset('storage/Logo.png') }}" class="imagelogo" alt="logo">
     </a>
     <!-- End Logo -->
@@ -17,11 +17,14 @@
         <a class="nav-link" href="{{route('post.allblogs')  }}">All <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="">Sport</a>
+        <a class="nav-link" href="{{route('post.sport')}}">Sport</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="{{route('post.news')}}">News</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('post.news')}}">Web Dev</a>
+          </li>
       </ul>
       <!-- End Menu -->
       <!-- Begin Search -->

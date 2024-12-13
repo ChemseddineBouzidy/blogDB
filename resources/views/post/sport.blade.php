@@ -1,13 +1,13 @@
 
 <header>
-    <img src="https://miro.medium.com/v2/resize:fit:1200/1*Ku3OI5aPiCY71lCHxOKK8w.jpeg" alt="Hero Image" class="hero-image">
+    <img src="https://images.pexels.com/photos/12460951/pexels-photo-12460951.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Hero Image" class="hero-image">
     {{-- <div class="hero-text">
         <h1>Explore a World of Ideas</h1>
         <p>Your One-Stop Destination for Insights on Technology, Health, Travel, and Lifestyle!</p>
     </div> --}}
    
 </header>
-<x-master title="Explore a World of Ideas ">
+<x-master title="Sport ">
 
     <style>
         body {
@@ -141,18 +141,18 @@
        
         <div class="articles">
             @foreach ($Blognews as $Blognews)
-            @if ($Blognews->categoryname==='NEWS')
+            @if ($Blognews->categoryname==='SPORT')
                 
-          
+           
             <div class="article">
                 <a href="{{route('post.show',$Blognews->id)}}">
-                <img src="{{ asset('storage/'.$Blognews->image) }}" alt="Article Image" ></a>
+                <img src="{{ asset('storage/'.$Blognews->image) }}" alt="Article Image"></a>
                 <div class="article-content">
                     <h3>Pourquoi le Wydad Casablanca...</h3>
                     <p>Le Wydad...etc</p>
                 </div>
                 <div class="article-footer">chemseddine - MON-DEC-2024</div>
-            
+           
             </div>
             @endif
             @endforeach
