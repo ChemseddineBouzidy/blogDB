@@ -20,4 +20,5 @@ class CategoryController extends Controller
    
         return redirect()->route('post.createcategory' )->with('success','Votre compte est bien cree' );
     }
+   
 }

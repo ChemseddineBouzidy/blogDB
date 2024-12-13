@@ -36,13 +36,13 @@
 		<!-- Begin Menu -->
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item active">
-			<a class="nav-link" href="index.html">Stories <span class="sr-only">(current)</span></a>
+			<a class="nav-link" href="{{route('post.allblogs')  }}">All <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" href="post.html">Post</a>
+			<a class="nav-link" href="post.html">Sport</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" href="author.html">Author</a>
+			<a class="nav-link" href="author.html">News</a>
 			</li>
 		</ul>
 		<!-- End Menu -->
@@ -98,18 +98,18 @@
 				</div>
 				<div class="col-md-7">
 					<div class="card-block">
-						<h2 class="card-title"><a href="{{route('post.show',$Blogs->id)}}">{{ Str::limit($Blogs->title,30,'....etc')}}</a></h2>
-						<h4 class="card-text">{{ Str::limit($Blogs->description,70,'....etc')}}.</h4>
+						<h2 class="card-title"><a href="{{route('post.show',$Blogs->id)}}">{{ Str::limit($Blogs->title,27,'....etc')}}</a></h2>
+						<h4 class="card-text">{!! Str::limit($Blogs->description,10,'....etc')!!}.</h4>
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
-								<a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+								<a href="{{route('post.show',$Blogs->id)}}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
 								</span>
 								<span class="author-meta">
-								<span class="post-name"><a href="author.html">{{$Blogs->author}}</a></span><br/>
+								<span class="post-name"><a href="{{route('post.show',$Blogs->id)}}">{{$Blogs->author}}</a></span><br/>
 								<span class="post-date">{!!date('D-M-Y', strtotime($Blogs->created_at))!!}</span><span class="dot"></span><span class="post-read">{{-- 6 min read--}}</span> 
 								</span>
-								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+								{{-- <span class="post-read-more"><a href="{{route('post.show',$Blogs->id)}}" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span> --}}
 							</div>
 						</div>
 					</div>
@@ -136,12 +136,15 @@
 
 	<section class="recent-posts">
 	<div class="section-title">
-		<h2><span>All Stories</span></h2>
+		<h2><span>all blogs</span></h2>
 	</div>
+
 	<div class="card-columns listrecent">
 		
         @foreach ($Blog as $Blogs)
-	
+	{{-- @if ($Blogs->categoryname==='sport') --}}
+		
+
 		<!-- begin post -->
 		<div class="card">
 		
@@ -149,23 +152,22 @@
 				<img class="img-fluid" src="{{ asset('storage/'.$Blogs->image) }}" alt="">
 			</a>
 			<div class="card-block">
-				<h2 class="card-title"><a href="post.html">{{Str::limit($Blogs->title,30,'....etc')}}</a></h2>
+				<h2 class="card-title"><a href="{{route('post.show',$Blogs->id)}}">{{Str::limit($Blogs->title,30,'....etc')}}</a></h2>
 				<h4 class="card-text">{{ Str::limit($Blogs->description,20,'....etc')}}.	{{$Blogs->categoryname}}</h4>
 				<div class="metafooter">
 					<div class="wrapfooter">
 						<span class="meta-footer-thumb">
-						<a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+						<a href="{{route('post.show',$Blogs->id)}}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
 						</span>
 						<span class="author-meta">
-						<span class="post-name"><a href="author.html">{{$Blogs->author}}</a></span><br/>
+						<span class="post-name"><a href="{{route('post.show',$Blogs->id)}}">{{$Blogs->author}}</a></span><br/>
 						<span class="post-date">{{!date('D-M-Y', strtotime($Blogs->created_at))}}</span><span class="dot"></span><span class="post-read"></span>
 						</span>
-						<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
 					</div>
 				</div>
 			</div>
 		</div>
-		{{$Blog->links()}}
+		{{-- @endif --}}
 
         @endforeach
 	
@@ -177,18 +179,18 @@
 
 	</div>
 	</section>
-
+	
 	<!-- End List Posts
 	================================================== -->
-
+	{{$Blog->links()}}
 	<!-- Begin Footer
 	================================================== -->
 	<div class="footer">
 		<p class="pull-left">
-			 Copyright &copy; 2017 Your Website Name
+			 Copyright &copy; 2024 
 		</p>
 		<p class="pull-right">
-			 Mediumish Theme by <a target="_blank" href="https://www.wowthemes.net">WowThemes.net</a>
+			 Contact Us : <a  href="tel:+2126167331419"  style="color: #37a7a7">0616733141</a>
 		</p>
 		<div class="clearfix">
 		</div>
@@ -209,29 +211,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>{{ asset('/js/bootstrap.min.js') }}
 <script src="{{ asset('/js/ie10-viewport-bug-workaround.js') }}"></script>
+
+
+
 </body>
 </html>
-<div class="post-filter container">
-	<span class="filter-item active-filter" data-filter="all">All</span>
-	<span class="filter-item" data-filter="sport">sport</span>
-	<span class="filter-item" data-filter="food">Food</span>
-	<span class="filter-item" data-filter="news">News</span>
- 
-</div>
-
-<div class="post container">
-	<!-- Post 1 -->
-	@foreach ($Blog as $Blogs)
-	<div class="post-box {{$Blogs->categoryname}}">
-		<img src="" alt="" class="post-img">
-		<h2 class="category"><div class="tes"></div></h2>
-		<a href="#" class="post-title"> </a>
-		<span class="post-date"></span>
-		<p class="post-description"> </p>
-		<div class="profile">
-			<img src="" alt="" class="profile-img">
-			<span class="profile-name"></span>
-		</div>
-	</div>
-	@endforeach
-</div>

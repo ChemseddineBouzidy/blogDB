@@ -4,16 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BlogRequest;
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
     //
     public function createblog(){
-        return view("post.createblog");
+        $Category = Category::paginate(9);
+        return view("post.createblog",compact("Category"));
     }
 
     public function storeblog(BlogRequest $request){
+        
          // Validate the form input
          $formFields = $request->validated();
          $fileName =$request->file('image')->store('blog','public');
@@ -28,10 +31,10 @@ class BlogController extends Controller
 // view all blog
     public function index()
     {
-    
-        $Blog = Blog::paginate(13);
+        $Category = Category::paginate(9);
+        $Blog = Blog::paginate(9);
      
-        return view('post.allblogs',compact('Blog'));
+        return view('post.allblogs',compact('Blog','Category'));
      
     }
     public function show(Blog $Blog)
@@ -39,5 +42,5 @@ class BlogController extends Controller
 
         return view('post.show', compact('Blog'));
     }
-  
+ 
 }
